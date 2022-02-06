@@ -15,36 +15,41 @@ void opciones() {
 void menu(){
     int option, cant, num, c1;
     string name;    
-    switch (option)
-    {
-    case 1:        
-        cout<<"Enter your name: "<<endl;
-        cin>>name;
-        cout<<"Enter first amount: "<<endl;
-        cin>>cant;
-        break;
-    case 2:
-        cout<<"Enter your account: "<<endl;
-        cin>>num;
-        cout<<"Enter cant: "<<endl;
-        cin>>c1;
-        cant = cant + c1;
-        cout<<"Total: "<<cant<<endl;
-        break;
-    case 3:
-        cout<<"Enter your account: "<<endl;
-        cin>>num;        
-        cout<<"Enter cant: "<<endl;
-        cin>>c1;
-        if(c1<cant){
-            cant = cant - c1;        
+    opciones();
+    cout<<"Enter option: ";
+    cin>>option;
+    do{
+        switch (option)
+        {
+        case 1:        
+            cout<<"Enter your name: "<<endl;
+            cin>>name;
+            cout<<"Enter first amount: "<<endl;
+            cin>>cant;
+            break;
+        case 2:
+            cout<<"Enter your account: "<<endl;
+            cin>>num;
+            cout<<"Enter cant: "<<endl;
+            cin>>c1;
+            cant = cant + c1;
+            cout<<"Total: "<<cant<<endl;
+            break;
+        case 3:
+            cout<<"Enter your account: "<<endl;
+            cin>>num;        
+            cout<<"Enter cant: "<<endl;
+            cin>>c1;
+            if(c1<cant){
+                cant = cant - c1;        
+            }
+            else{
+                cout<<"Imposible Transaction"<<endl;
+            }
+            break;            
         }
-        else{
-            cout<<"Imposible Transaction"<<endl;
-        }
-        break;            
-    }
+    }while(option != 4);
 }
 int main(){
-    opciones();
+    menu();
 }
