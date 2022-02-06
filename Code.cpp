@@ -9,12 +9,11 @@ void opciones() {
     cout << "Choose an option" << endl;
     cout << "1. Create new account" << endl;
     cout << "2. Make a deposit" << endl;
-    cout << "3. Make a withdrawal" << endl;
-    cout << "4. Show all accounts" <<endl;
-    cout << "5. exit" << endl;
+    cout << "3. Make a withdrawal" << endl;    
+    cout << "4. exit" << endl;
 }
 void menu(){
-    int option, cant, num;
+    int option, cant, num, c1;
     string name;    
     switch (option)
     {
@@ -26,10 +25,24 @@ void menu(){
         break;
     case 2:
         cout<<"Enter your account: "<<endl;
+        cin>>num;
+        cout<<"Enter cant: "<<endl;
+        cin>>c1;
+        cant = cant + c1;
+        cout<<"Total: "<<cant<<endl;
+        break;
+    case 3:
+        cout<<"Enter your account: "<<endl;
         cin>>num;        
-        break;
-    default:
-        break;
+        cout<<"Enter cant: "<<endl;
+        cin>>c1;
+        if(c1<cant){
+            cant = cant - c1;        
+        }
+        else{
+            cout<<"Imposible Transaction"<<endl;
+        }
+        break;            
     }
 }
 int main(){
